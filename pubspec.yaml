@@ -1,0 +1,61 @@
+name: mediconda
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.6
+  animated_splash_screen: ^1.3.0
+  flutter_screenutil: ^5.9.3
+  fluttertoast: ^8.2.8
+  shimmer: ^3.0.0
+  flutter_bloc: ^8.1.6
+  bloc: ^8.1.4
+  flutter_svg: ^2.0.10+1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/image/
+    - assets/svg/
+    - assets/font/alata/
+    - assets/font/overlock/
+    - assets/font/overpass/
+    - assets/font/ovo/
+
+  fonts:
+    - family: alata
+      fonts:
+        - asset: assets/font/alata/regular.ttf
+    - family: overlock
+      fonts:
+        - asset: assets/font/overlock/regular.ttf
+        - asset: assets/font/overlock/bold.ttf
+          weight: 700
+    - family: overpass
+      fonts:
+        - asset: assets/font/overpass/regular.ttf
+        - asset: assets/font/overpass/semi_bold.ttf
+          weight: 600
+        - asset: assets/font/overpass/bold.ttf
+          weight: 700
+    - family: ovo
+      fonts:
+        - asset: assets/font/ovo/regular.ttf
