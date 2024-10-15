@@ -17,7 +17,7 @@ class AppRoute {
       case Routes.splash:
         return _materialPageRoute(const SplashScreen());
       case Routes.onboarding:
-        return _materialPageRoute(const OnboardingScreen());
+        return _materialPageRoute( OnboardingScreen());
       case Routes.home:
         return _materialPageRoute(const HomeScreen());
       case Routes.profile:
