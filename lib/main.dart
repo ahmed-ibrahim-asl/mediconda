@@ -3,8 +3,9 @@ import 'package:mediconda/core/app/mediconda_app.dart';
 
 
 
+
 void main() {
-  runApp(const MedicondaApp());
+  runApp( const MedicondaApp());
 }
 
 
