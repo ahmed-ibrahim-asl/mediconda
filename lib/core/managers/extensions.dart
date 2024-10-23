@@ -20,11 +20,11 @@ extension BuildContextExtensions on BuildContext {
   void showSnackBar(SnackBar snackBar) {
     ScaffoldMessenger.of(this).showSnackBar(snackBar);
   }
+
 }
 
 
 extension ResponsiveDouble on num{
-  // Example for width and height scaling
   double  width(BuildContext context) => this *  MediaQuery.sizeOf(context).width/375;
   double  height(BuildContext context) => this *  MediaQuery.sizeOf(context).height/812;
   double  ratioWidth(BuildContext context) => this *  MediaQuery.sizeOf(context).width;

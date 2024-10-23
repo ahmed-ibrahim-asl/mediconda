@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mediconda/core/managers/extensions.dart';
-import 'package:mediconda/features/onboarding/presentation/models/onboarding_data.dart';
 import '../../../../core/managers/color_manager.dart';
 import '../../../../core/navigation/routes.dart';
 
 class BuildButtonNavigationOnboarding extends StatelessWidget {
-    BuildButtonNavigationOnboarding({super.key, required this.currentPage, required this.pageController,});
+    const BuildButtonNavigationOnboarding({super.key,  required this.pageController, required this.isLastPage, });
    final PageController pageController;
-   final int currentPage;
-
+   final bool isLastPage;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -28,7 +26,7 @@ class BuildButtonNavigationOnboarding extends StatelessWidget {
           ),
           TextButton(
             onPressed:(){
-              if(currentPage==onboardingItems.length-1){
+              if(isLastPage){
                 context.replaceScreen(Routes.home);
               }else{
                 pageController.nextPage(
@@ -38,8 +36,8 @@ class BuildButtonNavigationOnboarding extends StatelessWidget {
               }
             },
             child: Text(
-               currentPage== onboardingItems.length - 1 ? "Get Started" : "Next",
-              style: TextStyle(color:currentPage == onboardingItems.length - 1? ColorManager.blue : ColorManager.blue ),
+               isLastPage ? "Get Started" : "Next",
+              style: TextStyle(color:isLastPage? ColorManager.blue : ColorManager.blue ),
             ),
           ),
         ],

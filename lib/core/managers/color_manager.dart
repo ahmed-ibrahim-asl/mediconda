@@ -11,9 +11,9 @@ class ColorManager{
   static Color lighterBlue = const Color.fromRGBO(9, 15, 71, 0.45);
   static Color darkerBlue = const Color(0xff090F47);
   static Color white = Colors.white;
-  static Color offWhite = Color(0xffF5F7FA);
+  static Color offWhite = const Color(0xffF5F7FA);
   static Color grey = Colors.grey;
-  static Color lighterGrey = Color(0xffE0E0E0);
+  static Color lighterGrey = const Color(0xffE0E0E0);
   static Color black = Colors.black;
   static Color softWhite = const Color(0xffF7FBFF);
   static Color lightGreen = const Color(0xff647A84);

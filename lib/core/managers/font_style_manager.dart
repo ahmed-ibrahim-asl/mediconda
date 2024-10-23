@@ -26,7 +26,6 @@ class FontSizeManager {
   static const double s26 = 26.0;
   static const double s28 = 28.0;
 }
-
 class FontStyleManager {
   static TextStyle getAlataRegular({
     Color? color,

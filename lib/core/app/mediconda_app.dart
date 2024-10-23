@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mediconda/features/home/presentation/pages/home_screen.dart';
 
 import '../managers/theme_manager.dart';
 import '../navigation/app_route.dart';
-import '../navigation/routes.dart';
 
 class MedicondaApp extends StatelessWidget {
   const MedicondaApp({super.key});
@@ -19,8 +19,9 @@ class MedicondaApp extends StatelessWidget {
           title: 'Mediconda',
           theme: ThemeManager.lightTheme(),
           onGenerateRoute: (settings)=>AppRoute.generateRoute(settings),
-          initialRoute: Routes.splash,
+          // initialRoute: Routes.splash,
           debugShowCheckedModeBanner: false,
+          home: HomeScreen(),
 
           
 

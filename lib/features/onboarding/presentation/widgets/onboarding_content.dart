@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mediconda/features/onboarding/presentation/widgets/custom_image.dart';
 import '../../../../core/managers/font_style_manager.dart';
-import '../models/onboarding_data.dart';
+import '../../model/onboarding_model.dart';
 
 class OnboardingContent extends StatelessWidget {
-  final OnboardingData data;
+  final OnboardingModel data;
 
   const OnboardingContent({
-    Key? key,
+    super.key,
     required this.data,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
