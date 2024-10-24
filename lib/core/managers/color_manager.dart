@@ -13,10 +13,13 @@ class ColorManager{
   static Color white = Colors.white;
   static Color offWhite = const Color(0xffF5F7FA);
   static Color grey = Colors.grey;
-  static Color lighterGrey = const Color(0xffE0E0E0);
+  static Color lighterGrey = const Color(0xffE8E8E8);
+  static Color darkGrey = const Color(0xff656464
+  );
   static Color black = Colors.black;
   static Color softWhite = const Color(0xffF7FBFF);
   static Color lightGreen = const Color(0xff647A84);
+
   static Color red =  Colors.red;
 
 

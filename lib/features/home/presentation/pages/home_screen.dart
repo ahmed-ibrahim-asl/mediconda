@@ -20,7 +20,9 @@ class HomeScreen extends StatelessWidget {
   builder: (context, state) {
     final  cubit = HomeCubit.cubitProvider(context);
     return Scaffold(
+      backgroundColor: cubit.navigationIndex== 4 ? ColorManager.darkBlue : ColorManager.white,
       body: cubit.pages[cubit.navigationIndex],
+
       bottomNavigationBar: ClipRRect(
         borderRadius: BorderRadius.vertical(top: Radius.circular(SizeManager.mediumBorderRadius)),
         child: BottomNavigationBar(
@@ -116,7 +118,7 @@ class HomeView extends StatelessWidget {
                   ),
                 ),
 */
-              const Expanded(child: BuildProductGrid()),
+               Expanded(child: BuildProductGrid()),
             ],
           ),
         ),

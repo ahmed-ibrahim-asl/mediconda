@@ -13,7 +13,7 @@ class SearchScreen extends StatelessWidget {
         automaticallyImplyLeading: true,
         title: BuildSearchBar(),),
       body:
-      const BuildProductGrid(),
+       BuildProductGrid(),
 
 
     );

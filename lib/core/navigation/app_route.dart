@@ -6,6 +6,7 @@ import 'package:mediconda/features/profile/presentation/pages/profile_screen.dar
 import 'package:mediconda/features/search/presentation/pages/search_screen.dart';
 import 'package:mediconda/features/verify_otp/presentation/pages/verify_otp_screen.dart';
 
+import '../../features/auth/presentation/pages/login_screen.dart';
 import '../../features/home/presentation/pages/home_screen.dart';
 import '../../features/onboarding/presentation/pages/onboarding_screen.dart';
 import '../../features/splash/presentation/pages/splash_screen.dart';
@@ -16,6 +17,8 @@ class AppRoute {
     switch (settings.name) {
       case Routes.splash:
         return _materialPageRoute(const SplashScreen());
+        case Routes.login:
+        return _materialPageRoute(const AuthScreen());
       case Routes.onboarding:
         return _materialPageRoute( OnboardingScreen());
       case Routes.home:
@@ -26,8 +29,6 @@ class AppRoute {
         return _materialPageRoute(const VerifyOtpScreen());
       case Routes.search:
         return _materialPageRoute(const SearchScreen());
-      case Routes.empty:
-        return _materialPageRoute(const EmptyScreen());
       case Routes.details:
         return _materialPageRoute(const DetailsScreen());
       case Routes.notification:

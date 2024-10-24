@@ -1,12 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mediconda/core/managers/constant_manager.dart';
 
 import '../../../core/managers/asset_manager.dart';
 import '../../../core/managers/font_style_manager.dart';
 import '../../../core/managers/size_manager.dart';
 
-class BuildProductGrid extends StatelessWidget{
-  const BuildProductGrid({super.key});
+class BuildProductGrid extends StatefulWidget{
+   BuildProductGrid({super.key});
+
+  @override
+  State<BuildProductGrid> createState() => _BuildProductGridState();
+}
+
+class _BuildProductGridState extends State<BuildProductGrid> {
+final List<MedicineModel> medicines = [
+  MedicineModel(id: 0, name: 'Omron\nHEM-8712 BP', image: AssetsManager.elementItem, price: 150),
+  MedicineModel(id: 1, name: 'Panadol\nHEM-8712 BP', image: AssetsManager.elementItem, price: 120),
+];
 
   @override
   Widget build(BuildContext context) {
@@ -19,17 +30,15 @@ class BuildProductGrid extends StatelessWidget{
          mainAxisSpacing: 16,
          mainAxisExtent: 230
        ),
-       itemCount: 4,
+       itemCount: medicines.length,
        itemBuilder: (context, index) {
-         return buildProductCard(index == 1);
+         return buildProductCard(medicines[index]);
 
        }
    );
   }
-  
-}
-
-Widget buildProductCard(bool isLiked) {
+Widget buildProductCard(MedicineModel medicine) {
+  final bool isLiked = wishlist.contains(medicine.id);
   return Card(
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(SizeManager.smallBorderRadius+8),
@@ -39,7 +48,7 @@ Widget buildProductCard(bool isLiked) {
     child: Padding(
       padding: const EdgeInsets.all(8),
       child: Column(
-mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
@@ -47,39 +56,60 @@ mainAxisAlignment: MainAxisAlignment.start,
             height: 120.h,
 
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(SizeManager.smallBorderRadius),
-              image:
-                const DecorationImage(image: AssetImage(AssetManager.elementItem,),fit: BoxFit.cover)
+                borderRadius: BorderRadius.circular(SizeManager.smallBorderRadius),
+                image:
+                DecorationImage(image: AssetImage(medicine.image,),fit: BoxFit.cover)
             ),
           ),
           const SizedBox(height: 8,),
-           Row(
-             crossAxisAlignment: CrossAxisAlignment.start,
-             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-             children: [
-               Expanded(
-                 child: Text("Omron HEM-8712 BP Monitor",
-                           maxLines: 2,
-                           style: FontStyleManager.getOverPassRegular(fontSize: FontSizeManager.s13.sp),),
-               ),
-               IconButton(
-                 onPressed: () {},
-                 icon: Icon(
-                   isLiked ? Icons.favorite : Icons.favorite_border,
-                   color: isLiked ? Colors.blue : Colors.black,
-                 ),
-               ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Text(medicine.name,
+                  maxLines: 2,
+                  style: FontStyleManager.getOverPassRegular(fontSize: FontSizeManager.s13.sp),),
+              ),
+              IconButton(
+                onPressed: () {
+                  if(isLiked){
+                    setState(() {
+                      wishlist.remove(medicine.id);
+                    });
+                  }else{
+                    setState(() {
+                      wishlist.add(medicine.id);
 
-             ],
-           ),
+                    });
+                  }
+                },
+                icon: Icon(
+                  isLiked ? Icons.favorite : Icons.favorite_border,
+                  color: isLiked ? Colors.blue : Colors.black,
+                ),
+              ),
+
+            ],
+          ),
           const SizedBox(height: 4),
-          const Text(
-            "Rs.150",
+          Text(
+            "${medicine.price} L.E",
             style: TextStyle(color: Colors.black),
           ),
         ],
       ),
     ),
   );
+}
+
+}
+
+class MedicineModel{
+  final int id;
+  final String name;
+  final String image;
+  final double price;
+  MedicineModel({required this.id,required this.name,required this.image,required this.price});
 }
 

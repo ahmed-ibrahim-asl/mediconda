@@ -10,12 +10,12 @@ class OnboardingCubit extends Cubit<OnboardingState> {
   static OnboardingCubit get(context) => BlocProvider.of(context);
   final onboardingItems = [
     OnboardingModel(
-      image: AssetManager.onboarding1,
+      image: AssetsManager.onboarding1,
       title: 'View and searching for medicines.',
       subtitle: 'Here,you can easily search for the medicines you need and find nearby pharmacies that have them quickly and conveniently.',
     ),
     OnboardingModel(
-      image: AssetManager.onboarding2,
+      image: AssetsManager.onboarding2,
       title: 'Own a pharmacy?',
       subtitle: 'Now you can add the available medicines you have,so users can find and purchase them easily.',
     ),
