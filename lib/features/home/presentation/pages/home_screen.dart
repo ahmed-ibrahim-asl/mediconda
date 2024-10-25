@@ -3,10 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mediconda/core/managers/color_manager.dart';
 import 'package:mediconda/core/managers/size_manager.dart';
-import 'package:mediconda/features/home/component/buildSearchBar.dart';
 import 'package:mediconda/features/home/presentation/cubit/home_cubit.dart';
 
-import '../../component/build_product_grid.dart';
 
 
 class HomeScreen extends StatelessWidget {
@@ -79,50 +77,3 @@ cubit.changeBottomNavigationIndex(index)
   }
 }
 
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.topCenter,
-      children: [
-        Container(
-          width: 1.sw,
-          height: 150.h,
-
-          decoration: BoxDecoration(
-              color: ColorManager.darkBlue,
-              borderRadius: BorderRadius.vertical(bottom: Radius.circular(SizeManager.smallBorderRadius))
-          ),),
-        SizedBox(
-          height: 1.sh,
-          child: Column(
-            children: [
-              Container(
-
-                margin:EdgeInsets.only(top: 120.h) ,
-                // padding: const EdgeInsets.all( 10.0),
-
-                child: BuildSearchBar(),
-              ),
-/*
-                const Padding(
-                  padding: EdgeInsets.all(16),
-                  child: Text(
-                    "All Products",
-                    style: TextStyle(
-                      fontSize: FontSizeManager.s18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-*/
-               Expanded(child: BuildProductGrid()),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-}

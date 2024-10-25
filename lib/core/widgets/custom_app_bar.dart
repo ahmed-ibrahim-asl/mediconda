@@ -6,15 +6,16 @@ import '../managers/font_style_manager.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
-    super.key, required this.title, required this.onPressed,
+    super.key, required this.title,  this.onPressed,
   });
 final String title;
-final VoidCallback onPressed;
+final VoidCallback? onPressed;
   @override
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(title,style: FontStyleManager.getOverPassBold(),),
       actions: [
+        if(onPressed!=null)
         TextButton(onPressed:onPressed, child: Text('Clear all',style: FontStyleManager.getOverPassBold(color: ColorManager.blueBlue)),)
       ],
       forceMaterialTransparency: true,

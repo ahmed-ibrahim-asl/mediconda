@@ -17,7 +17,7 @@ class BuildButtonNavigationOnboarding extends StatelessWidget {
         children: [
           TextButton(
             onPressed:() {
-              context.replaceScreen(Routes.home);
+              context.replaceScreen(Routes.login);
             },
             child:  Text(
               "Skip",
@@ -27,7 +27,7 @@ class BuildButtonNavigationOnboarding extends StatelessWidget {
           TextButton(
             onPressed:(){
               if(isLastPage){
-                context.replaceScreen(Routes.home);
+                context.replaceScreen(Routes.login);
               }else{
                 pageController.nextPage(
                   duration: const Duration(milliseconds: 300),

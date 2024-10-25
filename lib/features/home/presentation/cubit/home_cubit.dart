@@ -5,7 +5,7 @@ import 'package:mediconda/features/profile/presentation/pages/profile_screen.dar
 import 'package:mediconda/features/wishlist/presentation/pages/wishlist_screen.dart';
 
 import '../../../search/presentation/pages/search_screen.dart';
-import '../pages/home_screen.dart';
+import '../components/home_view.dart';
 
 part 'home_state.dart';
 

@@ -20,7 +20,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
         });
       },),
       body:
-       BuildProductGrid(),
+       const BuildProductGrid(),
     );
   }
 }
