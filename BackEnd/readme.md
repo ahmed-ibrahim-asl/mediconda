@@ -51,8 +51,8 @@ This project is a Flask-based RESTful API designed for managing user accounts, u
 ### Steps
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo-url.git
-   cd your-repo-folder
+   git clone https://github.com/Ahmed-Lotfy5853/mediconda
+   cd mediconda
    ```
 
 2. Create a virtual environment and activate it:
