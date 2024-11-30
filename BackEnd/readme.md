@@ -141,14 +141,3 @@ This script automates:
   - `pharmacy_name`: Name of the pharmacy supplying the medicine.
   - `location_link`: Link to the pharmacy's location.
 
----
-
-## Notes
-- The project is structured for scalability using Blueprints.
-- The database schema is managed using Flask-Migrate.
-- Ensure secure secrets for production deployments.
-
----
-
-## License
-This project is licensed under the MIT License.
